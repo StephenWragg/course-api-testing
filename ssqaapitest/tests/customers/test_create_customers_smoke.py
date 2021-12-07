@@ -34,4 +34,8 @@ def test_create_customer_only_email_password():
         f'Email: {email}'
     # import pdb; pdb.set_trace()
 
-
+@pytest.mark.tcid47
+def test_create_customer_fail_for_existing_email():
+    # get existing email from db
+    cust_dao = CustomerHelper()
+    cust_dao.get_random_customer_from_db()
